@@ -7,7 +7,12 @@
 // TO DO: implement Player's assignment operator
 Player& Player::operator=(const Player& p) {
    // TODO: implement this function properly
-   throw std::logic_error("not implemented yet");
+	setName(p.getName());
+	setPosition(p.getPosition());
+	die = p.die;
+	if (p.getName() != getName()) {
+		throw std::logic_error("Player names are not the same");
+	}
 }
 
 // return player's new position after player rolls die
@@ -16,6 +21,14 @@ Player& Player::operator=(const Player& p) {
 // TO DO: implement this function to move player to the new postion
 //        after player rolls die. Position must be inside the board
 int Player::rollDieAndMove() {
-   // TODO: implement this function properly
-   throw std::logic_error("not implemented yet");
+	// TODO: implement this function properly
+	die = Die();
+	if (getPosition() + getDie().getFaceValue() > 100) {
+		return getPosition();
+	}
+	if (getPosition() + getDie().getFaceValue() <= 100) {
+		return (getPosition() + getDie().getFaceValue());
+	}
+
+
 }

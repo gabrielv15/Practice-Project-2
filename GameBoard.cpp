@@ -13,5 +13,10 @@
 // TO DO: implement this method
 void GameBoard::buildBoard() {
    // TODO: implement this function properly
-   throw std::logic_error("not implemented yet");
+	for (int i = 0; i <= BOARD_SIZE; i++) {
+		a.insert(i, i);
+	}
+	if (a.empty()) {
+		throw std::logic_error("Board is not created yet");
+	}
 }

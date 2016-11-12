@@ -16,7 +16,6 @@ public:
    
    // copy constructor
    Die(Die& die) { faceValue = die.getFaceValue(); }
-   
    // assignment operator
    Die& operator=(const Die& d) {
       if (this != &d) { // avoid self-assignment
